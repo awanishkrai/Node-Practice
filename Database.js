@@ -41,10 +41,10 @@ app.get("/", (req, res) => {
 });
 app.post("/insert", async (req, res) => {
   try {
-    const savedUser = await userdb.create(req.body); // wait for DB
-    res.status(201).json(savedUser); // send inserted data
+    const savedUser = await userdb.create(req.body);
+    res.status(201).json(savedUser);
   } catch (err) {
-    res.status(400).json({ error: err.message }); // handle validation/duplicate errors
+    res.status(400).json({ error: err.message });
   }
 });
 app.listen(300, () => console.log("server running"));
